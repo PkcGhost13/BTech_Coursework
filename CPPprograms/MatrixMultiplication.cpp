@@ -21,12 +21,12 @@ int main(void)
         cin>>c2;
 
         cout<<endl;
-        if(c1!=r2)
+        if(c1!=r2||c1==0||c2==0||r1==0||r2==0)
         {
-            cout<<"The matrix multiplication is not posible for the given dimensions. Please try again !!"<<endl;
+            cout<<"Error !!! The matrix multiplication is not posible for the given dimensions. Please try again !!"<<endl;
         }
     } 
-    while (c1!=r2);   
+    while (c1!=r2||c1==0||c2==0||r1==0||r2==0);   
 
     int a[r1][c1];
     int b[r2][c2];
