@@ -1,9 +1,19 @@
-#include <stdio.h>
-int main()
+#include <iostream>
+using namespace std;
+
+int main(void)
 {
-    show();
-}
-void show()
-{
-    printf("c");
+    int n=0;
+    cin>>n;
+    int x[n];
+    int w[n];
+    for(int i=0;i<n;i++)
+    {
+        cin>>x[i];
+    }
+
+    for(int i=0;i<n;i++)
+    {
+        cout<<x[i]<<" ";
+    }
 }

@@ -44,5 +44,4 @@ int main(void)
         cout<<oneComplement_n[i];
     }
     cout<<endl;
-
 }
