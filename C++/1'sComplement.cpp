@@ -19,14 +19,14 @@ int main(void)
         cout<<bin_n[i];
     }
     cout<<endl;
-    
+
     int l=0;
     int oneComplement_n[100];
     for(int i=k-1;i>=0;i--)
     {
         oneComplement_n[l++]=bin_n[i];
     }
-    
+
     for(int i=0;i<k;i++)
     {
         if(oneComplement_n[i]==1)
