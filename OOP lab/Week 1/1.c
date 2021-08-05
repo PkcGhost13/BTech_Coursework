@@ -1,5 +1,5 @@
 #include <stdio.h>
-struct student 
+struct student
 {
     char name[50];
     int roll;
@@ -24,7 +24,7 @@ float cgpa(float a,float b,float c)
     return cgpa;
 }
 
-int main() 
+int main()
 {
     printf("Enter information:\n");
     printf("Enter name: ");

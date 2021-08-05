@@ -6,5 +6,6 @@
         "iostream": "cpp",
         "stdlib.h": "c",
         "stdio.h": "c"
-    }
+    },
+    "C_Cpp.errorSquiggles": "Enabled"
 }
