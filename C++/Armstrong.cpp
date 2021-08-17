@@ -11,8 +11,13 @@ int main(void)
     int arm_n=0;
     while(n_copy>0)
     {
+        
         arm_n=arm_n+pow((n_copy%10),3);
+        cout<<n_copy%10<<endl;
+        cout<<pow((n_copy%10),3)<<endl;
+        cout<<arm_n<<endl;
         n_copy=n_copy/10;
+        cout<<n_copy<<endl;
     }
     if(n==arm_n)
     {
