@@ -1,3 +1,4 @@
+#include <stdio.h>
 struct student
 {
     int roll_no,marks;

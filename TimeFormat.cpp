@@ -7,7 +7,7 @@ int main ()
 {
     auto begin = std::chrono::high_resolution_clock::now();
     
-        int n,*arr;
+    int n,*arr;
     printf("Enter the size of the array : ");
     scanf("\n%d",&n);
     arr = (int*)malloc(n*sizeof(int));

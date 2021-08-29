@@ -2,10 +2,12 @@
 
 #include <iostream>
 using namespace std;
+
 int area(int);
 int area(int, int);
 float area(float);
 float area(float, float);
+
 int main()
 {
     int s, l, b;
