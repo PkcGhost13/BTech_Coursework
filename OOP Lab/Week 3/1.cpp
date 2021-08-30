@@ -25,11 +25,9 @@ bool isArmstrong(int n)
         {
             b*=a;
         }
-        cout<<"b="<<b<<endl;
         arm_n+=b;
         n_copy/=10;
     }
-    cout<<"arm ="<<arm_n<<endl;
     if(n==arm_n)
     {
         return true;

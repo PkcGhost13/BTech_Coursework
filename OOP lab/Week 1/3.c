@@ -3,7 +3,7 @@ struct EMP
 {
     int eno;
     char ename[50];
-    int ebasic_sal
+    int ebasic_sal;
 }s;
 
 int main()

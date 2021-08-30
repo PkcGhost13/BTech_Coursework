@@ -30,7 +30,7 @@ void main()
     }
     
     printf("\nStudent info in terms of marks from highest to lowest\n");
-    printf("\nROLL_NO\t\t\tNAME\t\tMARKS\n\n");
+    printf("\nROLL_NO\t\tNAME\t\tMARKS\n\n");
     for(i=0;i<n;i++)
     {
         printf("%d\t\t%s\t\t%d\n",stud[i].roll_no,stud[i].name,stud[i].marks);

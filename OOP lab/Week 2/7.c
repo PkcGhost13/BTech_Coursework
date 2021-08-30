@@ -21,7 +21,7 @@ void input()
 }
 void display()
 {
-    printf("The employee number is \n %d",a.empno);
+    printf("The employee number is : %d\n",a.empno);
     printf("Employee name:%s\n",a.ename);
     printf("The employee salary is:%.1f",a.esal);
 }

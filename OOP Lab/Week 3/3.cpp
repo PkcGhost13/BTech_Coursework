@@ -9,7 +9,7 @@ void swapByValue(int a, int b)
     b = temp;
     cout << "Call By Value";
 
-    cout << "\nAfter Swapping A ="
+    cout << "\nAfter Swapping \nA ="
          << a << endl;
     cout << "\nB = " << b << endl;
 }
