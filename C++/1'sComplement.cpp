@@ -5,6 +5,7 @@ int main(void)
 {
     int n=0,k=0;
     cout<<"Enter the decimal number to be converted :"<<endl;
+
     cin>>n;
     int bin_n[100];
     while(n>0)
@@ -45,4 +46,5 @@ int main(void)
     }
     cout<<endl;
 }
+
 

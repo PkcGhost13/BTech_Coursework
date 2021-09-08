@@ -13,12 +13,13 @@ node start = NULL;
 node create(node);
 node display(node);
 
-void main()
+int main()
 {
     printf("Enter the polynomial as follows: ");
     start = create(start);
     
     start = display(start);
+    return 0;
 }
 
 node create(node start)
