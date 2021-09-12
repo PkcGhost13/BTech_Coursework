@@ -45,10 +45,19 @@ void quickSort(int array[], int low, int high)
   }
 }
 
-int main() {
-  int data[] = {8, 7, 6, 1, 0, 9, 2};
-  int n = sizeof(data) / sizeof(data[0]);
-
+int main() 
+{
+  int n;
+  cout<<"Enter the number of input elements : "<<endl;
+  cin>>n;
+  int data[n]; 
+  //= {8, 7, 6, 1, 0, 9, 2};
+  cout<<"Enter the input elements : "<<endl;
+  for(int i=0;i<n;i++)
+  {
+    cin>>data[i];
+  }
+  //int n = sizeof(data) / sizeof(data[0]);
   cout << "Unsorted Array: \n";
   printArray(data, n);
 
