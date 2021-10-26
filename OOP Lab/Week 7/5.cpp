@@ -4,7 +4,7 @@ class student
 {
 public:
     string name;
-    double roll;
+    int roll;
     float marks[3];
     void getdata()
     {

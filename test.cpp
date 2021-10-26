@@ -1,31 +1,24 @@
 #include <iostream>
-using namespace std;
-class test
-{
-    static int n;
+#include <stdio.h>
+#define MAX 100
 
-public:
-    test()
-    {
-        n++;
-    }
-    ~test()
-    {
-        n--;
-    }
-    void static display()
-    {
-        cout << n;
-    }
-};
-int test::n;
-void function1()
+using namespace std;
+
+int main(void)
 {
-    test t3, t4;
-}
-int main()
-{
-    test t1, t2;
-    function1();
-    test::display();
+    FILE *fp;
+    char name[MAX];
+    int x,y;
+    char o='+';
+    //scanf("%d%c%d",&x,&o,&y);
+    printf("%d",10^5);
+    /*
+    printf("Enter filename: ");
+    cin>>name;
+
+    if ((fp = fopen(name, "w")) == 0)
+        printf("File cannot be opened!");
+       printf("%d\n%c\n%d",x,o,y);
+    return 0;
+    */
 }

@@ -30,13 +30,16 @@ public:
     {
         if (age1 > age)
         {
-            cout << "error 404 neighbour's son";
+            cout << "error 404 ";
         }
         else
         {
             cout << ">>Father's Name->" << name << endl;
 
             cout << ">>Father's Age->" << age << endl;
+            cout << ">>Son's Name->" << name1 << endl;
+
+            cout << ">>Son's Age->" << age1 << endl;
         }
     }
 };
