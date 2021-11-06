@@ -18,13 +18,13 @@ node *get_node()
     return temp;
 }
 
-struct node *queue[MAX];
+node *queue[MAX];
 int front = -1, rear = -1;
 void insert_queue(node *item);
 node *del_queue();
 int queue_empty();
 
-struct node *stack[MAX];
+node *stack[MAX];
 int top = -1;
 void push_stack(node *item);
 node *pop_stack();
@@ -115,8 +115,6 @@ void inorder_trav(node *root)
     }
     printf("\n");
 }
-
-
 
 void insert_queue(node *item)
 {
@@ -317,7 +315,7 @@ void main()
     {
         printf("\n----------------------------------");
         printf("\nBinary Search Tree Menu");
-        printf("\n----------------------------------");
+        printf("\n------------------------------------------------");
         printf("\n0. Quit");
         printf("\n1. Create");
         printf("\n2. In-Order Traversal");
@@ -327,7 +325,7 @@ void main()
         printf("\n6. Find Smallest Element");
         printf("\n7. Find Largest Element");
         printf("\n8. Deletion of Tree");
-        printf("\n----------------------------------");
+        printf("\n------------------------------------------------");
         printf("\nEnter your choice :");
         scanf("%d", &choice);
 
@@ -340,7 +338,7 @@ void main()
             do
             {
                 new_node = get_node();
-                printf("\nEnter The Element ");
+                printf("\nEnter The Element : ");
                 scanf("%d", &new_node->data);
 
                 if (root == NULL)
@@ -350,7 +348,8 @@ void main()
 
                 printf("\nWant To enter More Elements?(y/n)");
                 ans = getch();
-            } while (ans == 'y');
+            } 
+            while (ans == 'y');
             break;
 
         case 2:
