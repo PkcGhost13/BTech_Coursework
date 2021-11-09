@@ -9,10 +9,14 @@ struct node
     struct node *rchild;
 };
 
-struct node *search(struct node *root, int skey);
+struct node *search(struct node *root, int search_key);
 struct node *smallest(struct node *root);
 struct node *largest(struct node *root);
-struct node *insert(struct node *root, int ikey);
+struct node *insert(struct node *root, int insert_key);
+struct node *delete (struct node *root, int del_key);
+struct node *case_a(struct node *root, struct node *par, struct node *ptr);
+struct node *case_b(struct node *root, struct node *par, struct node *ptr);
+struct node *case_c(struct node *root, struct node *par, struct node *ptr);
 void preorder_trav(struct node *root);
 void inorder_trav(struct node *root);
 void post_trav(struct node *root);
@@ -46,7 +50,8 @@ int main()
         printf("6.Search\n");
         printf("7 Find Smallest Element\n");
         printf("8.Find Largest Element\n");
-        printf("9 Display\n");
+        printf("9. Display\n");
+        printf("10. Delete\n");
         printf("\nEnter your choice : ");
         scanf("%d", &choice);
 
@@ -100,6 +105,11 @@ int main()
             printf("\n");
             break;
 
+        case 10:
+            printf("\nEnter the key to be deleted : ");
+            scanf("%d", &k);
+            root = delete (root, k);
+            break;
         default:
             printf("\nInvalid choice\n");
         }
@@ -108,13 +118,13 @@ int main()
     return 0;
 }
 
-struct node *search(struct node *ptr, int skey)
+struct node *search(struct node *ptr, int search_key)
 {
     while (ptr != NULL)
     {
-        if (skey < ptr->info)
+        if (search_key < ptr->info)
             ptr = ptr->lchild;
-        else if (skey > ptr->info)
+        else if (search_key > ptr->info)
             ptr = ptr->rchild;
         else
             return ptr;
@@ -122,7 +132,7 @@ struct node *search(struct node *ptr, int skey)
     return NULL;
 }
 
-struct node *insert(struct node *root, int ikey)
+struct node *insert(struct node *root, int insert_key)
 {
     struct node *tmp, *par, *ptr;
 
@@ -132,9 +142,9 @@ struct node *insert(struct node *root, int ikey)
     while (ptr != NULL)
     {
         par = ptr;
-        if (ikey < ptr->info)
+        if (insert_key < ptr->info)
             ptr = ptr->lchild;
-        else if (ikey > ptr->info)
+        else if (insert_key > ptr->info)
             ptr = ptr->rchild;
         else
         {
@@ -144,13 +154,13 @@ struct node *insert(struct node *root, int ikey)
     }
 
     tmp = (struct node *)malloc(sizeof(struct node));
-    tmp->info = ikey;
+    tmp->info = insert_key;
     tmp->lchild = NULL;
     tmp->rchild = NULL;
 
     if (par == NULL)
         root = tmp;
-    else if (ikey < par->info)
+    else if (insert_key < par->info)
         par->lchild = tmp;
     else
         par->rchild = tmp;
@@ -158,12 +168,6 @@ struct node *insert(struct node *root, int ikey)
     return root;
 }
 
-/*if (ptr == NULL)
-{
-    printf("\ndkey not present in tree");
-    return root;
-}
-*/
 struct node *smallest(struct node *ptr)
 {
     if (ptr != NULL)
@@ -178,6 +182,89 @@ struct node *largest(struct node *ptr)
         while (ptr->rchild != NULL)
             ptr = ptr->rchild;
     return ptr;
+}
+
+struct node *delete (struct node *root, int del_key)
+{
+    struct node *par, *ptr;
+
+    ptr = root;
+    par = NULL;
+    while (ptr != NULL)
+    {
+        if (del_key == ptr->info)
+            break;
+        par = ptr;
+        if (del_key < ptr->info)
+            ptr = ptr->lchild;
+        else
+            ptr = ptr->rchild;
+    }
+
+    if (ptr == NULL)
+        printf("Delete key not present in tree\n");
+    else if (ptr->lchild != NULL && ptr->rchild != NULL)
+        root = case_c(root, par, ptr);
+    else if (ptr->lchild != NULL)
+        root = case_b(root, par, ptr);
+    else if (ptr->rchild != NULL)
+        root = case_b(root, par, ptr);
+    else
+        root = case_a(root, par, ptr);
+
+    return root;
+}
+
+struct node *case_a(struct node *root, struct node *par, struct node *ptr)
+{
+    if (par == NULL)
+        root = NULL;
+    else if (ptr == par->lchild)
+        par->lchild = NULL;
+    else
+        par->rchild = NULL;
+    free(ptr);
+    return root;
+}
+
+struct node *case_b(struct node *root, struct node *par, struct node *ptr)
+{
+    struct node *child;
+
+    if (ptr->lchild != NULL)
+        child = ptr->lchild;
+    else
+        child = ptr->rchild;
+
+    if (par == NULL)
+        root = child;
+    else if (ptr == par->lchild)
+        par->lchild = child;
+    else
+        par->rchild = child;
+    free(ptr);
+    return root;
+}
+
+struct node *case_c(struct node *root, struct node *par, struct node *ptr)
+{
+    struct node *succ, *parsucc;
+
+    parsucc = ptr;
+    succ = ptr->rchild;
+    while (succ->lchild != NULL)
+    {
+        parsucc = succ;
+        succ = succ->lchild;
+    }
+
+    ptr->info = succ->info;
+
+    if (succ->lchild == NULL && succ->rchild == NULL)
+        root = case_a(root, parsucc, succ);
+    else
+        root = case_b(root, parsucc, succ);
+    return root;
 }
 
 void preorder_trav(struct node *root)

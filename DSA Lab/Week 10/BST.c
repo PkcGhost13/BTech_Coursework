@@ -226,7 +226,7 @@ void inorder(node *temp)
     if (temp != NULL)
     {
         inorder(temp->lchild);
-        printf("%d", temp->data);
+        printf("%d ", temp->data);
         inorder(temp->rchild);
     }
 }
@@ -235,7 +235,7 @@ void preorder(node *temp)
 {
     if (temp != NULL)
     {
-        printf("%d", temp->data);
+        printf("%d ", temp->data);
         preorder(temp->lchild);
         preorder(temp->rchild);
     }
@@ -247,7 +247,7 @@ void postorder(node *temp)
     {
         postorder(temp->lchild);
         postorder(temp->rchild);
-        printf("%d", temp->data);
+        printf("%d ", temp->data);
     }
 }
 
@@ -260,12 +260,11 @@ node *find_minimum(node *root)
     return root;
 }
 
-node *find_maximum(node *root)
+node *find_maximum(node *root1)
 {
-    if (root == NULL)
-        return NULL;
-    else if (root->rchild != NULL)
-        return find_minimum(root->rchild);
+    node *root=root1;
+    if (root->rchild != NULL)
+        return find_maximum(root->rchild);
     return root;
 }
 
