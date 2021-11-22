@@ -262,7 +262,7 @@ node *find_minimum(node *root)
 
 node *find_maximum(node *root1)
 {
-    node *root=root1;
+    node *root = root1;
     if (root->rchild != NULL)
         return find_maximum(root->rchild);
     return root;
@@ -347,8 +347,7 @@ void main()
 
                 printf("\nWant To enter More Elements?(y/n)");
                 ans = getch();
-            } 
-            while (ans == 'y');
+            } while (ans == 'y');
             break;
 
         case 2:
