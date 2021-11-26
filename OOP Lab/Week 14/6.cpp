@@ -18,10 +18,10 @@ int main()
             int hra = esal * 15 / 100;
             int ta = esal * 9 / 100;
             int gross = esal + hra * ta;
-            cout << "Employee Details " << endl;
-            cout << "Employee No:" << eno << endl;
-            cout << "Employee Name" << ename << endl;
-            cout << "Employee Gross Salary" << gross << endl;
+            cout << "Employee Details : " << endl;
+            cout << "Employee No : " << eno << endl;
+            cout << "Employee Name : " << ename << endl;
+            cout << "Employee Gross Salary : " << gross << endl;
         }
     }
     catch (const char *e)

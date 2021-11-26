@@ -2,7 +2,7 @@
 using namespace std;
 
 template <class t1, class t2>
-t1 sum(t1 a, t2 b)
+t2 sum(t1 a, t2 b)
 {
     return a + b ;
 }

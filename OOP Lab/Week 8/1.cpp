@@ -1,7 +1,7 @@
 /*
-1. Wap to create Base class Number. 
-And make two derived class Prime & Armstrong. 
-And display whether a number entered is prime or not 
+1. Wap to create Base class Number.
+And make two derived class Prime & Armstrong.
+And display whether a number entered is prime or not
 and armstrong or not by declaring appropriate function.
 */
 
@@ -48,7 +48,7 @@ class Armstrong:public Prime
                 cpy/=10;
             }
             return count;
-        } 
+        }
         int checkArmstrong()
         {
             int cpy=n;
@@ -56,7 +56,7 @@ class Armstrong:public Prime
             int sum=0;
             while(cpy>0)
             {
-                sum+=pow((cpy%10),d);
+                sum=sum+pow((int)(cpy%10),d);
                 cpy/=10;
             }
             if(sum==n)
