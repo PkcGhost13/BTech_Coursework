@@ -1,125 +1,145 @@
 #include <stdio.h>
 #include <stdlib.h>
-typedef struct circularll
+struct node
 {
     int data;
-    struct circularll *next;
-} node;
-node *head;
+    struct node *next;
+};
+struct node *front = -1;
+struct node *rear = -1;
 
-void lastinsert();
-void begin_delete();
-void display();
-
-void main()
+void enqueue(int x)
 {
-    int choice = 0;
-    while (choice != 4)
+    struct node *newnode;
+    newnode = (struct node *)malloc(sizeof(struct node));
+    newnode->data = x;
+    newnode->next = 0;
+    if (rear == -1)
     {
-        printf("\n*********Main Menu*********\n");
-        printf("\nChoose one option from the following list ...\n");
-        printf("\n===============================================\n");
-        printf("\n1.Enqueue \n2.Dequeue \n3.Display\n4.Exit\n");
-        printf("\nEnter your choice?\n");
-        scanf("\n%d", &choice);
-        switch (choice)
-        {
-        case 1:
-            lastinsert();
-            break;
-        case 2:
-            begin_delete();
-            break;
-        case 3:
-            display();
-            break;
-        case 4:
-            exit(0);
-            break;
-        default:
-            printf("Please enter valid choice..");
-        }
-    }
-}
-
-void lastinsert()
-{
-    node *ptr, *temp;
-    int item;
-    ptr = (node *)malloc(sizeof(node));
-    if (ptr == NULL)
-    {
-        printf("\nOVERFLOW\n");
+        front = rear = newnode;
+        rear->next = front;
     }
     else
     {
-        printf("\nEnter Data?");
-        scanf("%d", &item);
-        ptr->data = item;
-        if (head == NULL)
-        {
-            head = ptr;
-            ptr->next = head;
-        }
-        else
-        {
-            temp = head;
-            while (temp->next != head)
-            {
-                temp = temp->next;
-            }
-            temp->next = ptr;
-            ptr->next = head;
-        }
-
-        printf("\nnode inserted\n");
+        rear->next = newnode;
+        rear = newnode;
+        rear->next = front;
     }
 }
 
-void begin_delete()
+void dequeue()
 {
-    node *ptr;
-    if (head == NULL)
+    struct node *temp;
+    temp = front;
+    if ((front == -1) && (rear == -1))
     {
-        printf("\nUNDERFLOW");
+        printf("\nQueue is empty");
     }
-    else if (head->next == head)
+    else if (front == rear)
     {
-        head = NULL;
-        free(head);
-        printf("\nnode deleted\n");
+        front = rear = -1;
+        free(temp);
     }
-
     else
     {
-        ptr = head;
-        while (ptr->next != head)
-            ptr = ptr->next;
-        ptr->next = head->next;
-        free(head);
-        head = ptr->next;
-        printf("\nnode deleted\n");
+        front = front->next;
+        rear->next = front;
+        free(temp);
+    }
+}
+
+int peek()
+{
+    if ((front == -1) && (rear == -1))
+    {
+        printf("\nQueue is empty");
+    }
+    else
+    {
+        printf("\nThe front element is %d", front->data);
+    }
+}
+
+void isEmpty()
+{
+    if ((front == -1) && (rear == -1))
+    {
+        printf("\nQueue is empty ");
+    }
+    else
+    {
+        printf("\nQueue is not empty ");
     }
 }
 
 void display()
 {
-    node *ptr;
-    ptr = head;
-    if (head == NULL)
+    struct node *temp;
+    temp = rear;
+    printf("\n The elements in a Queue are : ");
+    if ((front == -1) && (rear == -1))
     {
-        printf("\nnothing to print");
+        printf("Queue is empty");
     }
+
     else
     {
-        printf("\n Printing values ... \n");
+        while (temp->next != rear)
+        {
+            printf("%d,", temp->data);
+            temp = temp->next;
+        }
+        printf("%d", temp->data);
+    }
+}
 
-        while (ptr->next != head)
+int main()
+{
+
+    int choice = 0, x;
+    printf("\n*************************Main Menu*****************************\n");
+    while (choice != 6)
+    {
+        printf("\n----------------------------------------------------------------\n");
+        printf("\nPress 1: Enqueue");
+        printf("\nPress 2: Dequeue");
+        printf("\nPress 3: Peek");
+        printf("\nPress 4: Display of elements");
+        printf("\nPress 5: IsEmpty check ");
+        printf("\nPress 6: Exit ");
+        printf("\nEnter your choice : ");
+        scanf("%d", &choice);
+        switch (choice)
         {
 
-            printf("%d\n", ptr->data);
-            ptr = ptr->next;
+        case 1:
+            printf("Enter the element which is to be inserted : ");
+            x = 0;
+            scanf("%d", &x);
+            enqueue(x);
+            display();
+            break;
+        case 2:
+            dequeue();
+            display();
+            break;
+        case 3:
+            peek();
+            display();
+            break;
+        case 4:
+            display();
+            break;
+        case 5:
+            isEmpty();
+            break;
+        case 6:
+            printf("\nExiting.....");
+            exit(0);
+            break;
+        default:
+            printf("\nPlease enter valid choice..\n");
         }
-        printf("%d\n", ptr->data);
     }
+    return 0;
 }
