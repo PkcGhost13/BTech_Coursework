@@ -19,31 +19,31 @@ class q5
         cgpa=cgpa/5;
         if(cgpa>=90)
         {
-            System.out.println("Grade O CGPA= "+cgpa);
+            System.out.println("Grade O CGPA= "+(cgpa/10.0));
         }
         else if(cgpa>=80 && cgpa<90)
         {
-            System.out.println("Grade E CGPA= "+cgpa);
+            System.out.println("Grade E CGPA= "+(cgpa/10.0));
         }
         else if(cgpa>=70 && cgpa<80)
         {
-            System.out.println("Grade A CGPA= "+cgpa);
+            System.out.println("Grade A CGPA= "+(cgpa/10.0));
         }
         else if(cgpa>=60 && cgpa<70)
         {
-            System.out.println("Grade B CGPA= "+cgpa);
+            System.out.println("Grade B CGPA= "+(cgpa/10.0));
         }
         else if(cgpa>=50 && cgpa<60)
         {
-            System.out.println("Grade C CGPA= "+cgpa);
+            System.out.println("Grade C CGPA= "+(cgpa/10.0));
         }
         else if(cgpa>=40 && cgpa<50)
         {
-            System.out.println("Grade D CGPA= "+cgpa);
+            System.out.println("Grade D CGPA= "+(cgpa/10.0));
         }
         else
         {
-            System.out.println("Grade Fail CGPA= "+cgpa);
+            System.out.println("Grade Fail CGPA= "+(cgpa/10.0));
         }
     }
 }
