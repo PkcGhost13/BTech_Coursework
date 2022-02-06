@@ -1,3 +1,0 @@
-C:/Users/pawan/Desktop/Pawan/GitHub/Coding/3rd semester/cmake-build-debug/CMakeFiles/3rd_semester.dir
-C:/Users/pawan/Desktop/Pawan/GitHub/Coding/3rd semester/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/pawan/Desktop/Pawan/GitHub/Coding/3rd semester/cmake-build-debug/CMakeFiles/rebuild_cache.dir

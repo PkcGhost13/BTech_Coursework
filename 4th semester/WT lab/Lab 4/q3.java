@@ -5,12 +5,11 @@ class q3
     {
         int n1=Integer.parseInt(args[0]);
         int n2=Integer.parseInt(args[1]);
-        System.out.println("The sum is is: "+(n1+n2));
+        System.out.println("The sum from cli input is : "+(n1+n2));
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the first number: ");
+        System.out.println("Enter the two numbers : ");
         n1=sc.nextInt();
-        System.out.println("Enter the second number: ");
         n2=sc.nextInt();
-        System.out.println("The sum is is: "+(n1+n2));
+        System.out.println("The sum from scanner class input is: "+(n1+n2));
     }
 }
