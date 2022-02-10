@@ -1,0 +1,1 @@
+INSERT INTO EMPLOYEE VALUES('8001','Chatterjee','Pawan','001','Swapan',TO_DATE('2015-07-13','YYYY-MM-DD'),'20000','2000','1001','2001');
