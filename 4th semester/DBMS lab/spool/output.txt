@@ -1,0 +1,26 @@
+SQL> select * from faculty where name LIKE 'D%';
+
+ FACULTYID NAME           ROOMID      PHONE     DEPTID                                                                                                                                                                                                          
+---------- ---------- ---------- ---------- ----------                                                                                                                                                                                                          
+         2 Dr.Rajdeep        101 9756435723     251003                                                                                                                                                                                                          
+         3 Debashis          101 9756435623     251004                                                                                                                                                                                                          
+
+SQL> select name, deptid from faculty order by name, deptid desc;
+
+NAME           DEPTID                                                                                                                                                                                                                                           
+---------- ----------                                                                                                                                                                                                                                           
+Debashis       251004                                                                                                                                                                                                                                           
+Dr.Rajdeep     251003                                                                                                                                                                                                                                           
+HimansuDas     251001                                                                                                                                                                                                                                           
+Kumar          251006                                                                                                                                                                                                                                           
+Pawan          251005                                                                                                                                                                                                                                           
+
+SQL> select * from term;
+
+    TERMID TERMDESC    STARTDATE    ENDDATE                                                                                                                                                                                                                     
+---------- ---------- ---------- ----------                                                                                                                                                                                                                     
+      6006 MidTerm      20220103   20220620                                                                                                                                                                                                                     
+      6007 EndTerm      20220620   20221203                                                                                                                                                                                                                     
+      6008 NextTerm     20230720   20231203                                                                                                                                                                                                                     
+
+SQL> spool off;

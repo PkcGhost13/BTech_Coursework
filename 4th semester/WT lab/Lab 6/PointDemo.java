@@ -15,11 +15,11 @@ public class PointDemo
         int x2 = sc.nextInt();
         System.out.println("Enter the value y : ");
         int y2 = sc.nextInt();
-        Point obj1 = new Point (x1,y2);
+        Point obj1 = new Point (x1,y1);
         Point obj2 = new Point (x2,y2);
         obj1.show();
         obj2.show();
-        obj.findDistance();
+        obj1.findDistance();
         obj1.findDistance(x2,y2);
         obj1.findDistance(obj2);
     }
