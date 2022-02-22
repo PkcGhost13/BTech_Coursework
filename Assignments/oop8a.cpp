@@ -190,14 +190,14 @@ int main()
         switch (type)
         {
         case 1:
-            
-                cout << "Current account :" << endl;
-                cout << "Enter the name of customer : ";
-                cin >> obj1.customer_name;
-                cout << "Enter the account number : ";
-                cin >> obj1.account_no;
-                obj1.account_type = "current";
-                do
+
+            cout << "Current account :" << endl;
+            cout << "Enter the name of customer : ";
+            cin >> obj1.customer_name;
+            cout << "Enter the account number : ";
+            cin >> obj1.account_no;
+            obj1.account_type = "current";
+            do
             {
                 obj1.menu();
                 cout << "Do you want to continue your operations on this account press 1 to continue 0 to exit" << endl;
@@ -205,14 +205,14 @@ int main()
             } while (ch != 0);
             break;
         case 2:
-            
-                cout << "Savings account :" << endl;
-                cout << "Enter the name of customer : ";
-                cin >> obj2.customer_name;
-                cout << "Enter the account number : ";
-                cin >> obj2.account_no;
-                obj2.account_type = "savings";
-                do
+
+            cout << "Savings account :" << endl;
+            cout << "Enter the name of customer : ";
+            cin >> obj2.customer_name;
+            cout << "Enter the account number : ";
+            cin >> obj2.account_no;
+            obj2.account_type = "savings";
+            do
             {
                 obj2.menu();
                 cout << "Do you want to continue your operations on this account press 1 to continue 0 to exit" << endl;
@@ -223,8 +223,8 @@ int main()
             cout << "Wrong choice" << endl;
             break;
         }
-        cout << "Do you want to switch to another account and continue press 1 to continue 0 to exit "<<endl;
+        cout << "Do you want to switch to another account and continue press 1 to continue 0 to exit " << endl;
         cin >> ch;
-    } while (ch!=0);
+    } while (ch != 0);
     return 0;
 }
