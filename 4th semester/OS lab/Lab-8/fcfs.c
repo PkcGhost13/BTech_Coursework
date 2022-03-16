@@ -30,11 +30,15 @@ void sortfcfs(process p[],int n)
 }
 void display(process p[],int n)
 {
-    printf("Process \t AT \t BT \t CT \t TAT \t WT\n");
+    printf("-----------------------------------------------------------\n");
+    printf("Process |\t AT |\t BT |\t CT |\t TAT |\t WT\n");
+    printf("-----------------------------------------------------------\n");
     for (int i = 0; i < n; i++)      
     {
-        printf("%d \t\t %d \t %d \t %d \t %d \t %d\n",p[i].pno,p[i].at,p[i].bt,p[i].et,p[i].tat,p[i].wt);
+        printf("%d \t|\t %d \t %d \t %d \t %d \t %d\n",p[i].pno,p[i].at,p[i].bt,p[i].et,p[i].tat,p[i].wt);
+        printf("-----------------------------------------------------------\n");
     }
+    printf("-----------------------------------------------------------\n");
 }
 int idlecpu(int at,int ct)
 {
@@ -92,6 +96,25 @@ double avgturnaroundtime(process p[], int n)
     avg=avg/n;
     return avg;
 }
+void ganttchart(process p[],int n)
+{
+    sortfcfs(p,n);
+    completiontime(p,n);
+    turnaroundtime(p,n);
+    waitingtime(p,n);
+    printf("Gantt's Chart : \n");
+    printf("---------------------------------------------\n|");
+    for(int i=0;i<n;i++)
+    {
+        printf("P%d\t|",i);
+    }
+    printf("\n---------------------------------------------\n0\t");
+    for(int i=0;i<n;i++)
+    {
+        printf("%d\t",p[i].et);
+    }
+    printf("\n\n");
+}
 int main(void)
 {
     printf("Enter the number of processes : ");
@@ -107,11 +130,8 @@ int main(void)
         printf("Burst Time : ");
         scanf("%d",&proc[i].bt);
     }
-    sortfcfs(proc,n);
-    completiontime(proc,n);
-    turnaroundtime(proc,n);
-    waitingtime(proc,n);
+    ganttchart(proc,n);
     display(proc,n);
     printf ("Average turn around time is : %lf\n",avgturnaroundtime(proc,n));
-    printf ("Average waiting time is : %lf",avgwaitingtime(proc,n));
+    printf ("Average waiting time is : %lf\n",avgwaitingtime(proc,n));
 }

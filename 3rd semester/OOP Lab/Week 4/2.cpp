@@ -4,25 +4,25 @@ using namespace std;
 class simpleInterest
 {
     float p, t, r, interest;
-    public:
-        void getPrincipal()
-        {
-            cin>> p;
-        }
-        void getTime()
-        {
-            cin>> t;
-        }
-        void getRate()
-        {
-            cin>> r;
-        }
-        float sI()
-        {
-            return (p * r * t) / 100;
-        }
-};
 
+public:
+    void getPrincipal()
+    {
+        cin >> p;
+    }
+    void getTime()
+    {
+        cin >> t;
+    }
+    void getRate()
+    {
+        cin >> r;
+    }
+    float sI()
+    {
+        return (p * r * t) / 100;
+    }
+};
 
 int main()
 {

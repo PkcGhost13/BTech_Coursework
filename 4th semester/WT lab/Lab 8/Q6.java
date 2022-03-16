@@ -12,7 +12,7 @@ class Finalclass
         System.out.println("This is a final method.");
     }
 }
-public class Q6 extends Finalclass 
+public class Q6 extends Finalclass //both classes will be extended
 {
     public void display() 
     {
