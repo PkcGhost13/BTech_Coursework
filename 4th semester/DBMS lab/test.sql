@@ -1,4 +1,0 @@
-SELECT * FROM EMPLOYEE;
-SELECT * FROM DEPT;
-commit;
-
