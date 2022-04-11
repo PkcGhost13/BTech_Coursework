@@ -1,8 +1,9 @@
 DECLARE
-    a number (5):=10;
-    b number (5):=20;
-    temp number (5);
-begin
+    a number (2):=10;
+    b number (2):=20;
+    temp number (2);
+    
+BEGIN
     DBMS_OUTPUT.PUT_LINE('The values before swapping are : ');
     DBMS_OUTPUT.PUT_LINE('a : '||a);
     DBMS_OUTPUT.PUT_LINE('b : '||b);
@@ -12,5 +13,5 @@ begin
     DBMS_OUTPUT.PUT_LINE('The values after swapping are : ');
     DBMS_OUTPUT.PUT_LINE('a : '||a);
     DBMS_OUTPUT.PUT_LINE('b : '||b);
-end;
+END;
 /
