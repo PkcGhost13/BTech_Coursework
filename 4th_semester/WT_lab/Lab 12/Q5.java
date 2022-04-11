@@ -19,6 +19,7 @@ public class Q5
             throw new NegativeNumberException();
         }
     }
+    
     public static void main(String[] args) 
     {
         Scanner  s=new Scanner(System.in);
@@ -27,12 +28,11 @@ public class Q5
         try
         {
             processInput(x);
-            System.out.println("Output : "+x*2);
+            System.out.println("Output : "+(double)(x*2));
         }
         catch(NegativeNumberException e)
         {
             System.out.println(e);
-        }
-        s.close();   
+        } 
     }   
 }

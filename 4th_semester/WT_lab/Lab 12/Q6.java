@@ -70,14 +70,13 @@ public class Q6
         int minutes = sc.nextInt();
         System.out.print("Enter the sec value : ");
         int seconds = sc.nextInt();
-        sc.close();
         Time mytime = new Time(hours,minutes,seconds);
         try
         {
             System.out.print("\nThe Time is : ");
             mytime.display();
         } 
-        catch(Hours_Exception e)
+        catch(Hours_Exception e )
         {
             System.out.println(e);
         }
