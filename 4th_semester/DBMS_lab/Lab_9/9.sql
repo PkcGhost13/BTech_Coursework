@@ -1,3 +1,4 @@
+/*
 DROP TABLE DVD; 
 CREATE TABLE DVD
 (
@@ -8,19 +9,14 @@ CREATE TABLE DVD
     returnmonth number(2),
     returnyear number(4)
 ); 
+*/
 
 DECLARE
-    rentaldate number(2);
-    rentalmonth number(2);
-    rentalyear number(4);
-    returndate number(2);
-    returnmonth number(2);
-    returnyear number(4);
-    TYPE days IS VARRAY(12) OF INTEGER;
-    d days;
+    rentaldate DATE;
+    returndate DATE;
 
 BEGIN
-    rentaldate:=&rentaldate;
+    rentald := TO_DATE('&rentalDay-&rentalMonth-&rentalYear','dd-mm-yyyy');
     rentalmonth:=&rentalmonth;
     rentalyear:=&rentalyear;
     d:=days(31,28,31,30,31,30,31,31,30,31,30,31);
