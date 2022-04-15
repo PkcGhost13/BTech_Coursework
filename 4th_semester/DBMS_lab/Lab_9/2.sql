@@ -5,10 +5,8 @@ BEGIN
     LOOP
         IF MOD(n,2)!=0 THEN
             DBMS_OUTPUT.PUT_LINE(n);
-            n:=n+1;
-        ELSE
-            n:=n+1;
         END IF;
+        n:=n+1;
         IF n>=10 THEN EXIT;
         END IF;
     END LOOP;
