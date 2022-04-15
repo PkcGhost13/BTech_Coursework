@@ -1,6 +1,6 @@
 create table EMPLOYEE
 (
-    EMPLOYEEID NUMBER generated as identity,
+    EMPLOYEEID NUMBER,
     LNAME      VARCHAR2(10),
     FNAME      VARCHAR2(10),
     POSITIONID NUMBER,

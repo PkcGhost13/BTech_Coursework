@@ -1,6 +1,6 @@
 create table DEPT
 (
-    DEPTID     NUMBER generated as identity,
+    DEPTID     NUMBER ,
     DEPTNAME   VARCHAR2(10),
     LOCATION   VARCHAR2(10),
     EMPLOYEEID NUMBER

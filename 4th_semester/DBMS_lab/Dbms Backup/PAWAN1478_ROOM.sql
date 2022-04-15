@@ -1,6 +1,6 @@
 create table ROOM
 (
-    ROOMTYPE NUMBER generated as identity,
+    ROOMTYPE NUMBER ,
     ROOMDESC VARCHAR2(10)
 )
 /

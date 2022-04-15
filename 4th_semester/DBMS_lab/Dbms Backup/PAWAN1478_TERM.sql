@@ -1,6 +1,6 @@
 create table TERM
 (
-    TERMID    NUMBER generated as identity,
+    TERMID    NUMBER ,
     TERMDESC  VARCHAR2(10),
     STARTDATE DATE,
     ENDDATE   DATE

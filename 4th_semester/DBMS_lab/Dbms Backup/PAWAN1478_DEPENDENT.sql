@@ -1,6 +1,6 @@
 create table DEPENDENT
 (
-    EMPLOYEEID  NUMBER generated as identity,
+    EMPLOYEEID  NUMBER ,
     DEPENDENTID NUMBER,
     DEPDOB      DATE,
     RELATION    VARCHAR2(20)

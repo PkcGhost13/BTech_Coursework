@@ -1,6 +1,6 @@
 create table STUDENT
 (
-    STUDENTID NUMBER generated as identity,
+    STUDENTID NUMBER ,
     LAST      VARCHAR2(10),
     FIRST     VARCHAR2(10),
     STREET    VARCHAR2(10),

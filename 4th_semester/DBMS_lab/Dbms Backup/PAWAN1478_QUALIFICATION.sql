@@ -1,6 +1,6 @@
 create table QUALIFICATION
 (
-    QUALID   NUMBER generated as identity,
+    QUALID   NUMBER ,
     QUALDESC VARCHAR2(30)
 )
 /

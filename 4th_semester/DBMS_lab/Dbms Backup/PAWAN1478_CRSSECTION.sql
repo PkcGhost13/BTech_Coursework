@@ -1,6 +1,6 @@
 create table CRSSECTION
 (
-    CSID      NUMBER generated as identity,
+    CSID      NUMBER,
     COURSEID  NUMBER
         unique,
     SECTION   VARCHAR2(5),

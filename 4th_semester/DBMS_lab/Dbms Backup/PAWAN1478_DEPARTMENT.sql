@@ -1,6 +1,6 @@
 create table DEPARTMENT
 (
-    DEPTID    NUMBER generated as identity,
+    DEPTID    NUMBER ,
     DEPTNAME  VARCHAR2(10),
     FACULTYID NUMBER
 )

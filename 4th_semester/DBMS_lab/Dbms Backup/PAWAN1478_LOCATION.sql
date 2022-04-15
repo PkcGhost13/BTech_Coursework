@@ -1,6 +1,6 @@
 create table LOCATION
 (
-    ROOMID   NUMBER generated as identity,
+    ROOMID   NUMBER ,
     BUILDING VARCHAR2(20),
     ROOMNO   NUMBER not null,
     CAPACITY NUMBER not null,

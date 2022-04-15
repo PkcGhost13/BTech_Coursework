@@ -1,6 +1,6 @@
 create table REGISTRATION
 (
-    STUDENTID NUMBER generated as identity,
+    STUDENTID NUMBER,
     CSID      NUMBER not null,
     MIDTERM   VARCHAR2(20),
     FINAL     VARCHAR2(20),

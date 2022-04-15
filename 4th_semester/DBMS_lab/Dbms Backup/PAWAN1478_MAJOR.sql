@@ -1,6 +1,6 @@
 create table MAJOR
 (
-    MAJORID   NUMBER generated as identity,
+    MAJORID   NUMBER ,
     MAJORDESC VARCHAR2(20)
 )
 /
