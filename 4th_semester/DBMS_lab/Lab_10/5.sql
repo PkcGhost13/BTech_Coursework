@@ -1,23 +1,23 @@
 DECLARE
     invalid_operator EXCEPTION;
-    fnumber NUMBER := &fnumber;
-    snumber NUMBER := &snumber;
+    fn NUMBER := &first_number;
     op CHAR := '&op';
+    sn NUMBER := &second_number;
     res NUMBER;
 
 BEGIN
     IF op = '+' THEN
-        res := fnumber + snumber;
+        res := fn + sn;
     ELSIF op = '-' THEN
-        res := fnumber - snumber;
+        res := fn - sn;
     ELSIF op = '*' THEN
-        res := fnumber * snumber;
+        res := fn * sn;
     ELSIF op = '/' THEN
-        res := fnumber / snumber;
+        res := fn / sn;
     ELSE
         RAISE invalid_operator;
     END IF;
-    DBMS_OUTPUT.PUT_LINE ('The solution is : '||fnumber || op || snumber || '=' || res);
+    DBMS_OUTPUT.PUT_LINE ('The solution is : '||fn || op || sn || ' = ' || res);
     EXCEPTION
     WHEN invalid_operator THEN
     DBMS_OUTPUT.PUT_LINE('Invalid operator entered');
