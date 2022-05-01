@@ -15,5 +15,5 @@ OS build: 19043.1151
 Experience: Windows Feature Experience Pack 120.2212.3530.0
 
 @Pawan Kumar Chatterjee
-Languages: C, C++, Java, Python.
+Languages: C, C++, Java, HTML, CSS, Python, Shell Script.
 Edited on: 03/08/2021

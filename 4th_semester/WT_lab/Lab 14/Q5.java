@@ -6,11 +6,11 @@ public class Q5 extends Applet {
     Font f;
     public void init() {
         f = new Font("Arial", Font.BOLD, 24);
-        s = "Welcome to Java Applet";
         System.out.println("Inside init method");
     }
 
     public void start() {
+        s = "Welcome to Java Applet";
         System.out.println("Inside start method");
     }
 

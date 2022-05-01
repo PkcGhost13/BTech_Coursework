@@ -11,5 +11,4 @@ public class Q9 extends Applet {
         g.drawString(getParameter("SMarks"), 50, 90);
         g.drawString(getParameter("SGrade"), 50, 110);
     }
-
 }

@@ -1,0 +1,26 @@
+How to run java applet :
+
+1. Install jdk 8 or 9
+	https://www.oracle.com/java/technologies/downloads/#license-lightbox
+
+2. Go to jdk file in C:\Program Files\Java\jdk1.8.0_331\bin and 
+	change the java.exe to javaold exe and
+	javac.exe to javacold.exe
+
+3. Search environment variables add the path to system variables path
+	C:\Program Files\Java\jdk1.8.0_331\bin
+
+4. Now write the given java code and then at the end in multi line comments add 
+	/*
+	<applet code ="class_name" width=600 height=700>
+	</applet>
+	*/
+
+5. Right click on file open in integrated terminal then write
+	javacold file_name.java
+	appletviewer file_name.java
+
+6. For question 8 and 9 need to make a two files one with java code and a second html file with the html applet 
+	code which you add at the end of the file then run
+	javacold file_name.java
+	appletviewer file_name.html
