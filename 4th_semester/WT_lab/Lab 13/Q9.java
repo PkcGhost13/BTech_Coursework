@@ -14,7 +14,8 @@ public class Q9 {
         FileWriter fout=new FileWriter("Coding/4th_semester/WT_lab/Lab 13/student.txt");
         FileInputStream fin = new FileInputStream("Coding/4th_semester/WT_lab/Lab 13/student.txt");
         System.out.println("Writing to file .........");
-        fout.write("Roll : " + roll + "\nName : " + name + "\nSubject Name : " + subname + "\nMarks : " + marks);
+        fout.write("Roll : " + roll + "\nName : " + name +
+                    "\nSubject Name : " + subname + "\nMarks : " + marks);
         fout.close();
         System.out.println("Reading and Printing details from file .........");
         while ((c = fin.read ()) != -1) {
