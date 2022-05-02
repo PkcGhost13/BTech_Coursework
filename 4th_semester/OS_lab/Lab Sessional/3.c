@@ -4,11 +4,7 @@
 #include <stdlib.h>
 typedef struct process_struct
 {
-    int pid;
-    int at;
-    int bt;
-    int ct, wt, tat, rt, start_time;
-    int bt_remaining;
+    int pid, at, bt, ct, wt, tat, rt, start_time, bt_remaining;
 } process;
 
 process ps[100];
@@ -34,6 +30,7 @@ int comparatorPID(const void *a, const void *b)
     else if (x >= y)
         return 1;
 }
+
 int main()
 {
     int n, index;
@@ -121,13 +118,6 @@ int main()
             }
         }
     }
-    max_completion_time = INT_MIN;
-    for (int i = 0; i < n; i++)
-    {
-        max_completion_time = findmax(max_completion_time, ps[i].ct);
-    }
-    length_cycle = max_completion_time - ps[0].at;
-    cpu_utilization = (float)(length_cycle - total_idle_time) / length_cycle;
     qsort((void *)ps, n, sizeof(process), comparatorPID);
     printf("\nProcess No.\tAT\tCPU Burst Time\tStart Time\tCT\tTAT\tWT\tRT\n");
     printf("----------------------------------------------------------------------------------\n");
