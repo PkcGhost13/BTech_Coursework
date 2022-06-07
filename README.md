@@ -10,7 +10,7 @@ Pen and touch: Pen and touch support with 10 touch points
 
 Edition: Windows 10 Home Single Language
 Version: 21H1
-Installed on: 31-‎07-‎2021
+Installed on: 31-07-2021
 OS build: 19043.1151
 Experience: Windows Feature Experience Pack 120.2212.3530.0
 

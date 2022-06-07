@@ -1,9 +1,25 @@
 body {
-  background-color: pink;
+  background-color: blue;
   margin-left: 10px;
   margin-right: 10px;
 }
-
-h2 {
-  color: maroon;
+h1
+{
+  color: yellow;
+  text-align: center;
 }
+p 
+{ 
+  background-color: #347deb;
+}
+.border-1{
+  color: black;
+  border: double 20px orange;
+  margin-bottom: 40px;
+}
+.border-2{
+  color: cyan;
+  border: double 20px cyan;
+}
+
+

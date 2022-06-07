@@ -1,2 +1,0 @@
-The maximum among the input elements is : 25.000000
-The average of the given input elements is : 40
