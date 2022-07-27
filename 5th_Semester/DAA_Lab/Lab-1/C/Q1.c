@@ -3,9 +3,9 @@
 #include <time.h>
 void sorter(int arr[],int n)
 {
-        for (int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
     {
-        arr[i] = rand();
+        arr[i] = rand() / 1000000;
     }
     for (int i = 0; i <n; i++)
     {

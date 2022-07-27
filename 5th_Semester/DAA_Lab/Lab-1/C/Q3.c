@@ -1,38 +1,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-void rearrange(int arr[],int n)
+void rearrange(int arr[], int n)
 {
-    for (int i = 0; i <n; i++)
-    {
-        for (int j = 0; j < n - i - 1;j++)
-        {
-            if (arr[j] > arr[j + 1])
-            {
-                int temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
-            }
-        }
-    }
-    int r[n],h=0,f=n-1;
+    int j = -1;
     for (int i = 0; i < n; i++)
     {
-        if(arr[i]%2==0)
+        if (arr[i] % 2 == 0)
         {
-            r[h]=arr[i];
-            h++;
-        }
-        else
-        {
-            r[f]=arr[i];
-            f--;
+            j++;
+            int temp = arr[j];
+            arr[j] = arr[i];
+            arr[i] = temp;
         }
     }
     printf("\nThe sorted array is : ");
     for (int i = 0; i < n; i++)
     {
-        printf("%d ", r[i]);
+        printf("%d ", arr[i]);
     }
 }
 int main(void)
@@ -45,7 +30,7 @@ int main(void)
     t = clock();
     for (int i = 0; i < n; i++)
     {
-        scanf("%d",&arr[i]);
+        scanf("%d", &arr[i]);
     }
     rearrange(arr, n);
     t = clock() - t;

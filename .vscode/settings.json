@@ -1,14 +1,6 @@
 {
-    "code-runner.runInTerminal": true,
-    "code-runner.saveAllFilesBeforeRun": true,
-    "code-runner.saveFileBeforeRun": true,
     "files.associations": {
-        "iostream": "cpp",
-        "stdlib.h": "c",
-        "stdio.h": "c",
-        "stdbool.h": "c",
-        "ostream": "cpp"
+        "cstdlib": "c"
     },
-    "C_Cpp.errorSquiggles": "Enabled"
-    
+    "python.formatting.provider": "black"
 }

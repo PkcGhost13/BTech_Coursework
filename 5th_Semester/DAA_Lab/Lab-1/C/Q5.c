@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h> 
+//#include <stdlib.h> 
 #include <time.h>
 
 int nonZeroElements(int n,int arr[n][n])
@@ -69,7 +69,7 @@ int main(void)
     t = clock();
     printf("\nThe number of non-zero elements in the matrix is : %d", nonZeroElements(n, arr));
     printf("\nThe sum of elements above diagonal is : %d",sumAboveDiagonal(n,arr));
-    printf("\n The elements below the minor diagonal are : ");
+    printf("\nThe elements below the minor diagonal are : ");
     minorDiagonal(n,arr);
     printf("\nThe product of the diagonal elements is : %d",productOfDiagonals(n,arr));
     t = clock() - t;
