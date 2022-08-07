@@ -1,0 +1,20 @@
+Q1. Write a program to create a tcp socket through which the client will send
+a roll no of a student to the server. The server has a record of name, roll,marks
+of 5 subjects of 10 students. Server will recieve the roll no. getting from the 
+client and it will search the roll no. on its record. If the roll no. matches, then
+the server will return the details of the students to the client.
+
+Q2. Create a tcp socket through which two clients can connect a server. The first 
+client will send a number to the server and the server will forward that number to 
+the second client and the second client will send a number to the server and the 
+server will return back to first client.
+
+Q3. Create a tcp socket through which two clients will connect to the server.
+Clients can chat with each other via server.
+
+Q4. Make a ftp in client server protocol
+client server 
+username ok
+password ok
+list names of file
+get file returns file
