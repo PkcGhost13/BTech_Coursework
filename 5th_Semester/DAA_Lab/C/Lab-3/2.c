@@ -4,15 +4,15 @@
 
 int findMajorityNormal(int nums[], int n)
 {
-    for (int i = 0; n && i <= n / 2; i++)
+    for (int i = 0; i <= n / 2; i++)
     {
         int count = 1;
-        for (int j = i + 1; j < n; j++)
+        for (int j = i; j < n; j++)
         {
             if (nums[j] == nums[i])
                 count++;
         }
-        if (count > n / 2)
+        if (count >= n / 2)
             return nums[i];
     }
     return -1;
