@@ -9,9 +9,8 @@ int main()
     sa.sin_port = 60018;
     i = connect(sockfd, (struct sockaddr *)&sa, sizeof(sa));
     int c1;
-    printf("Received from server : ");
     recv(sockfd, &c1, sizeof(int), 0);
-    printf("%d\n", c1);
+    printf("Received from server : %d\n", c1);
     int c2;
     printf("Enter the number : ");
     scanf("%d", &c2);

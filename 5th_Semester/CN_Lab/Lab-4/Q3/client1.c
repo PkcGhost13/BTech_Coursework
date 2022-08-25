@@ -9,13 +9,16 @@ int main()
     sa.sin_addr.s_addr = inet_addr("127.0.0.1");
     sa.sin_port = 60018;
     i = connect(sockfd, (struct sockaddr *)&sa, sizeof(sa));
-    int c1;
-    printf("Enter the number : ");
-    scanf("%d", &c1);
-    printf("Sending to server...... \n");
-    send(sockfd, &c1, sizeof(int), 0);
-    int c2;
-    recv(sockfd, &c2, sizeof(int), 0);
-    printf("Received from server : %d\n", c2);
+    char s[100];
+    while(1)
+    {
+        printf("You : ");
+        fgets(s,100,stdin);
+        send(sockfd, &s, sizeof(s), 0);
+        recv(sockfd, &s, sizeof(s), 0);
+        printf("Friend : %s\n", s);
+        if(strcmp(s, "bye") == 0)
+            break;
+    }
     close(sockfd);
 }
