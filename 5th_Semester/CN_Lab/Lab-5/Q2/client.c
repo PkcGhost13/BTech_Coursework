@@ -30,7 +30,7 @@ int main()
            (struct sockaddr *)&their_addr, sizeof their_addr);
     printf("sent bytes to %s\n", inet_ntoa(their_addr.sin_addr));
     recvfrom(sockfd, &num1, sizeof(int), 0,
-             (struct sockaddr *)&their_addr, sizeof their_addr);
+             (struct sockaddr *)&their_addr, (socklen_t *)sizeof their_addr);
     printf("The summation is : %d\n", num1);
     close(sockfd);
     return 0;

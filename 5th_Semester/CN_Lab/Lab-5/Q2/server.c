@@ -7,13 +7,13 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
-#define MYPORT 4952 // the port users will be connecting to
+#define MYPORT 4952 
 #define MAXBUFLEN 200
 int main()
 {
     int sockfd;
-    struct sockaddr_in my_addr;    // my address information
-    struct sockaddr_in their_addr; // connector's address information
+    struct sockaddr_in my_addr;   
+    struct sockaddr_in their_addr; 
     socklen_t addr_len;
     int num1, num2;
     if ((sockfd = socket(AF_INET, SOCK_DGRAM, 0)) == -1)

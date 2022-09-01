@@ -32,7 +32,6 @@ struct TNode *sortedListToBSTRecur(struct LNode **head_ref, int n)
     root->right = sortedListToBSTRecur(head_ref, n - n / 2 - 1);
 
     return root;
-}
 struct TNode *newNode(int data)
 {
     struct TNode *node = (struct TNode *)
