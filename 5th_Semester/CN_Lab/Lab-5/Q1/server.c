@@ -1,19 +1,9 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <errno.h>
-#include <string.h>
-#include <sys/types.h>
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <arpa/inet.h>
-#define MYPORT 4952 // the port users will be connecting to
-#define MAXBUFLEN 200
+#include "udp.h"
 int main()
 {
     int sockfd;
-    struct sockaddr_in my_addr;    // my address information
-    struct sockaddr_in their_addr; // connector's address information
+    struct sockaddr_in my_addr;    
+    struct sockaddr_in their_addr; 
     socklen_t addr_len;
     int numbytes;
     char buf[MAXBUFLEN];
@@ -22,10 +12,9 @@ int main()
         perror("socket");
         exit(1);
     }
-    my_addr.sin_family = AF_INET;         // host byte order
-    my_addr.sin_port = htons(MYPORT);     // short, network byte order
-    my_addr.sin_addr.s_addr = INADDR_ANY; // automatically fill with my IP
-    // memset(my_addr.sin_zero, '\0', sizeof my_addr.sin_zero);
+    my_addr.sin_family = AF_INET;        
+    my_addr.sin_port = htons(MYPORT);     
+    my_addr.sin_addr.s_addr = INADDR_ANY; 
     if (bind(sockfd, (struct sockaddr *)&my_addr, sizeof my_addr) == -1)
     {
         perror("bind");

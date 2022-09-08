@@ -1,14 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <errno.h>
-#include <string.h>
-#include <sys/types.h>
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <arpa/inet.h>
-#include <netdb.h>
-#define SERVERPORT 4952 // the port users will be connecting to
+#include "udp.h"
 int main()
 {
     int sockfd;
@@ -18,8 +8,8 @@ int main()
         perror("socket");
         exit(1);
     }
-    their_addr.sin_family = AF_INET;         // host byte order
-    their_addr.sin_port = htons(SERVERPORT); // short, network byte order
+    their_addr.sin_family = AF_INET;
+    their_addr.sin_port = htons(SERVERPORT);
     their_addr.sin_addr.s_addr = inet_addr("127.0.0.1");
     int num1, num2;
     printf("Enter the two numbers : ");

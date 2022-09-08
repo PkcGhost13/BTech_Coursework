@@ -9,7 +9,6 @@
 int main()
 {
     int i, sockfd;
-    char buf[100];
     struct sockaddr_in sa;
     sockfd = socket(AF_INET, SOCK_STREAM, 0);
     sa.sin_family = AF_INET;

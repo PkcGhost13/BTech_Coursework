@@ -24,7 +24,6 @@ void bubbleSort(int arr[], int n)
 int main()
 {
     int sockfd, fd1, length, i;
-    char buf[100];
     struct sockaddr_in sa, ta1;
     sockfd = socket(AF_INET, SOCK_STREAM, 0);
     sa.sin_family = AF_INET;
