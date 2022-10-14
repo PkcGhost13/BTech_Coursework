@@ -1,40 +1,64 @@
-#include <stdio.h>
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+#include<string.h>
+#include<time.h>
+#define MAX 100
+typedef struct
+{
+    int weight;
+    int profit;
+    float ratio;
+}item;
 
-struct Item
+void sort(item *a, int n)
 {
-    int value, weight;
-};
-
-int cmp(struct Item a, struct Item b)
-{
-    double r1 = (double)a.value / (double)a.weight;
-    double r2 = (double)b.value / (double)b.weight;
-    return r1 > r2;
-}
-double fractionalKnapsack(int W, struct Item arr[], int N)
-{
-    sort(arr, arr + N, cmp);
-    double finalvalue = 0.0;
-    for (int i = 0; i < N; i++)
+    int i, j;
+    item temp;
+    for(i=0;i<n;i++)
     {
-        if (arr[i].weight <= W)
+        for(j=i+1;j<n;j++)
         {
-            W -= arr[i].weight;
-            finalvalue += arr[i].value;
-        } 
+            if(a[i].ratio<a[j].ratio)
+            {
+                temp=a[i];
+                a[i]=a[j];
+                a[j]=temp;
+            }
+        }
+    }
+}
+
+int main()
+{
+    int n, i, j, w, p, max;
+    item a[MAX];
+    printf("Enter the number of items: ");
+    scanf("%d", &n);
+    printf("Enter the weight and profit of each item: ");
+    for(i=0;i<n;i++)
+    {
+        scanf("%d %d", &a[i].weight, &a[i].profit);
+        a[i].ratio=(float)a[i].profit/a[i].weight;
+    }
+    sort(a, n);
+    printf("Enter the maximum weight: ");
+    scanf("%d", &max);
+    w=0;
+    p=0;
+    for(i=0;i<n;i++)
+    {
+        if(w+a[i].weight<=max)
+        {
+            w+=a[i].weight;
+            p+=a[i].profit;
+        }
         else
         {
-            finalvalue += arr[i].value * ((double)W / (double)arr[i].weight);
+            p+=(max-w)*a[i].ratio;
             break;
         }
     }
-    return finalvalue;
-}
-int main()
-{
-    int W = 50; 
-    struct Item arr[] = {{60, 10}, {100, 20}, {120, 30}};
-    int N = sizeof(arr) / sizeof(arr[0]);
-    printf("Maximum value we can obtain = %d", fractionalKnapsack(W, arr, N));
+    printf("The maximum profit is %d", p);
     return 0;
 }
