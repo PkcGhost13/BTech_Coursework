@@ -1,8 +1,5 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include<math.h>
-#include<string.h>
-#include<time.h>
 #define MAX 100
 typedef struct
 {
@@ -45,7 +42,7 @@ int main()
     {
         if(a[i].start>=a[j].finish)
         {
-            printf("%d ", i+1);
+            printf("%d ", i);
             j=i;
         }
     }

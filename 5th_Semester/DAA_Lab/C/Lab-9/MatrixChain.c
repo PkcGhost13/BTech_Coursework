@@ -11,7 +11,6 @@ int min(int a, int b)
     }
     return b;
 }
-
 int min_operation(int v[], int n) 
 { 
     int dp[n+1][n+1];
